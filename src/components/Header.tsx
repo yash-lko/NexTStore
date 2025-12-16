@@ -12,8 +12,8 @@ export default function Header() {
                     <Image
                         src="/images/logo.png"
                         alt="logo"
-                        width={80}  
-                        height={80}
+                        width={120}  
+                        height={100}
                         className="object-contain"
                         priority
                     />

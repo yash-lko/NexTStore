@@ -32,7 +32,7 @@ export default function BannerSlider() {
               src={src}
               alt={`Banner ${index + 1}`}
               fill
-              className="object-cover grayscale brightness-75 opacity-90 mix-blend-screen text-pink-500"
+              className="object-cover  opacity-90 mix-blend-screen text-pink-500"
             />
           </div>
         ))}
