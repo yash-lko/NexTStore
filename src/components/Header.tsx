@@ -12,7 +12,7 @@ export default function Header() {
                     <Image
                         src="/images/logo.png"
                         alt="logo"
-                        width={120}  
+                        width={130}  
                         height={100}
                         className="object-contain"
                         priority

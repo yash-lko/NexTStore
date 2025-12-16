@@ -9,9 +9,11 @@ export default function Home() {
       <div className="w-full">
         <SidebarFilters />
       </div>
-      <BannerSlider />
+     
       <div className="w-full px-4 mt-6">
+        
         <Suspense fallback={<HomeProductsSkeleton />}>
+         <BannerSlider />
           <HomeProducts />
         </Suspense>
       </div>

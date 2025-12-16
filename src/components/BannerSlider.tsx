@@ -27,7 +27,7 @@ export default function BannerSlider() {
     <div className="w-full overflow-hidden mt-4">
       <Slider {...settings}>
         {images.map((src, index) => (
-          <div key={index} className="relative w-full h-[250px] rounded-2xl overflow-hidden">
+          <div key={index} className="relative w-full h-62.5 rounded-2xl overflow-hidden">
             <Image
               src={src}
               alt={`Banner ${index + 1}`}
