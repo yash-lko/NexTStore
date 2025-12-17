@@ -1,22 +1,24 @@
 import { ShoppingCart } from "lucide-react";
-import { Product } from "@/types/products";
-
-interface ProductCardProps {
-    product: Product;
-}
+import { ProductCardProps } from "@/types/products";
+import Link from "next/link";
 
 export default function ProductCard({ product }: ProductCardProps) {
     if (!product) return null;
+    const {title}=product;
+    const slug=title.toLowerCase().trim().replace(/\s+/g, "-");
 
+    console.log(product, "Products")
     return (
-        <div className="group bg-white rounded-xl cursor-pointer shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col overflow-hidden">
+        <div className="group bg-white mt-2 rounded-xl cursor-pointer shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col overflow-hidden">
 
-            <div className="h-48 w-full bg-white flex items-center justify-center overflow-hidden transition-transform ease-in-out duration-300 hover:scale-110">
+            <div className="h-50 w-full bg-white flex items-center justify-center overflow-hidden transition-transform ease-in-out duration-300 hover:scale-105">
+               <Link href={`products/${product.slug}`}>
                 <img
-                    src={product.thumbnail}
+                    src={product.images[0]}
                     alt={product.title}
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-45 max-w-45 object-contain p-2"
                 />
+                </Link> 
             </div>
 
 
@@ -29,7 +31,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 </p>
                 <div className="flex items-center justify-between mt-3">
                     <p className="text-lg font-semibold text-gray-900">
-                        ₹{product.price}
+                        ₹{(product.price*90.92).toFixed(2)}
                     </p>
 
                     <button className="p-2 rounded-full bg-pink-500 text-white cursor-pointer">

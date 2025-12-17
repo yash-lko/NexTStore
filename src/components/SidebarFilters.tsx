@@ -34,7 +34,7 @@ export default function FilterBar() {
             <button
               key={cat.name}
               onClick={() => setCategory(cat.name)}
-              className={`flex items-center cursor-pointer gap-2 px-4 py-2 rounded text-sm font-medium flex-shrink-0 ${
+              className={`flex items-center cursor-pointer gap-2 px-4 py-2 rounded text-sm font-medium shrink-0 ${
                 category === cat.name
                   ? "bg-pink-500 text-white"
                   : "bg-gray-100 text-black hover:text-white hover:bg-pink-500"

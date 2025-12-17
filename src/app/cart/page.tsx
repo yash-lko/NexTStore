@@ -3,26 +3,24 @@ const CartPage = () => {
   const cartItems = [
     {
       id: 1,
-      title: "Men's Sports Shoes",
+      title: "Bed",
       price: 1299,
       originalPrice: 3999,
-      image: "/images/shoes.jpg",
+      image: "/images/products/bed.webp",
       qty: 1,
     },
     {
       id: 2,
-      title: "Wireless Bluetooth Earbuds",
+      title: "Perfume",
       price: 899,
       originalPrice: 2499,
-      image: "/images/earbuds.jpg",
+      image: "/images/products/perfume.webp",
       qty: 2,
     },
   ];
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 grid lg:grid-cols-3 gap-8">
-      
-      {/* LEFT — Cart Items */}
       <div className="lg:col-span-2 bg-white p-6 rounded-2xl shadow">
         <h2 className="text-xl font-semibold mb-6">Your Cart</h2>
 
@@ -53,28 +51,24 @@ const CartPage = () => {
                     % Off
                   </span>
                 </div>
-
-                {/* Quantity Selector */}
                 <div className="mt-3 flex items-center gap-2">
-                  <button className="w-8 h-8 rounded-full border flex items-center justify-center hover:bg-gray-200">
+                  <button className="w-8 h-8 rounded-full cursor-pointer border flex items-center justify-center hover:bg-gray-200">
                     -
                   </button>
                   <span className="font-medium">{item.qty}</span>
-                  <button className="w-8 h-8 rounded-full border flex items-center justify-center hover:bg-gray-200">
+                  <button className="w-8 h-8 rounded-full cursor-pointer border flex items-center justify-center hover:bg-gray-200">
                     +
                   </button>
                 </div>
               </div>
 
-              <button className="text-red-500 font-semibold hover:underline">
+              <button className="text-pink-500 font-semibold hover:underline cursor-pointer">
                 Remove
               </button>
             </div>
           ))}
         </div>
       </div>
-
-      {/* RIGHT — Price Summary */}
       <div className="bg-white p-6 rounded-2xl shadow h-fit">
         <h2 className="text-xl font-semibold mb-4">Price Details</h2>
         <div className="border-b pb-4 space-y-3">
@@ -100,7 +94,7 @@ const CartPage = () => {
           <span>₹897</span>
         </div>
 
-        <button className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold">
+        <button className="mt-6 w-full bg-pink-500 cursor-pointer  text-white py-3 rounded-xl font-semibold">
           Place Order
         </button>
       </div>
