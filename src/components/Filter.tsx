@@ -9,7 +9,7 @@ export default function Filters() {
   const [maxPrice, setMaxPrice] = useState("");
 
   return (
-    <div className="w-full bg-white dark:bg-gray-900 shadow rounded-lg p-5 mb-6">
+    <div className="w-full mt-10  bg-white dark:bg-gray-900 shadow rounded-lg p-5 mb-6 ">
       {/* Top Row */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
 

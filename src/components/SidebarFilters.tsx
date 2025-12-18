@@ -24,7 +24,7 @@ export default function FilterBar() {
   ];
 
   return (
-    <div className="w-full bg-white shadow px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4 overflow-x-auto">
+    <div className="w-full  bg-white shadow px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4 overflow-x-auto">
       
       {/* Categories */}
       <div className="flex gap-3 flex-wrap md:flex-nowrap">

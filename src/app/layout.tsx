@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { CartProvider } from "./context/CartContext";
+import { Toaster } from "react-hot-toast";
+import { Metadata } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,9 +37,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header/>
-        {children}
-        <Footer/>
+        <CartProvider>
+          <Header />
+          <div className="mt-18"></div>
+          {children}
+          <Toaster position="bottom-right" />
+        </CartProvider>
+        <Footer />
       </body>
     </html>
   );

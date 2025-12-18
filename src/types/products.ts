@@ -1,4 +1,3 @@
-
 export interface Product {
   id: number;
   title: string;
@@ -14,11 +13,20 @@ export interface Product {
   };
 }
 
+export interface CartItem extends Product {
+  quantity: number;
+}
 
-
+export interface CartContextType {
+  cart: CartItem[];
+  addToCart: (product: Product) => void;
+  removeFromCart: (id: number) => void;
+  increaseQty: (id: number) => void;
+  decreaseQty: (id: number) => void;
+}
 
 export interface ProductCardProps {
-    product: Product;
+  product: Product;
 }
 
 export interface ProductDetailsSlug {
