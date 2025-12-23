@@ -13,8 +13,9 @@ export default function Home() {
       <div className="w-full px-4 mt-6">
         
         <Suspense fallback={<HomeProductsSkeleton />}>
-         <BannerSlider />
+         
           <HomeProducts />
+          {/* <BannerSlider /> */}
         </Suspense>
       </div>
     </div>
