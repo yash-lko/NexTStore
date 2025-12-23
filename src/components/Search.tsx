@@ -1,16 +1,15 @@
 "use client"
-import React, { useState } from 'react'
 import { Search } from 'lucide-react'
-import { getProducts } from '@/lib/product';
+import { useSearchStore } from '@/app/store/useSearchStore';
 const SearchComp = () => {
-    const [search , setSearch]=useState('');
-    console.log(search, "search")
+    const {query, setQuery}=useSearchStore();
   return (
      <div className="hidden md:flex items-center flex-1 max-w-xl">
                     <div className="w-full relative">
                         <input
                             type="text"
-                            onChange={(e)=>setSearch(e.target.value)} 
+                            value={query}
+                            onChange={(e)=>setQuery(e.target.value)} 
                             name='search'
                             placeholder="Search for products..."
                             className="w-full rounded-sm py-2 pl-4 pr-10 text-sm border border-gray text-black"

@@ -1,7 +1,8 @@
-import {ShoppingCart } from "lucide-react";
+
 import { Metadata } from "next";
 import { ProductDetailsSlug } from "@/types/products";
 import BackButton from "@/components/BackButton";
+import CartButton from "./CartButton";
 export const metadata: Metadata = {
   icons: {
     icon: '/images/favicon.ico',
@@ -22,9 +23,6 @@ export default async function ProductDetailsUI({ params }: { params: Promise<Pro
 
 
   const productDetails = data.find((b: any) => b.slug.trim() === product_slug.trim());
-
-  console.log(productDetails, "Product Detials")
-
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 mt-12">
@@ -61,14 +59,11 @@ export default async function ProductDetailsUI({ params }: { params: Promise<Pro
 
 
           <div className="flex gap-3 mt-6">
-            <button className="flex items-center  cursor-pointer gap-2 px-4 py-2 rounded-lg bg-pink-500 text-white text-sm font-medium hover:bg-pink-600 transition">
-              <ShoppingCart className="w-4 h-4" />
-              Add to Cart
-            </button>
+           <CartButton product={productDetails}/>
 
-            <button className="px-4 py-2 cursor-pointer text-sm rounded-lg border border-gray-300 hover:bg-gray-100 transition">
+            {/* <button className="px-4 py-2 cursor-pointer text-sm rounded-lg border border-gray-300 hover:bg-gray-100 transition">
               Buy Now
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

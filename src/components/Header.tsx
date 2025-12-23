@@ -5,9 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import SearchComp from "./Search";
 import { useCart } from "@/app/context/CartContext";
-
 export default function Header() {
-
     const {cart}=useCart();
     return (
         <header className="w-full bg-white shadow-sm fixed top-0 z-50">

@@ -17,3 +17,19 @@ export async function getProducts(
 
   return res.json();
 }
+
+
+
+export async function getFun(){
+      const res=await fetch(`${API_URL}`,
+        {cache:"no-cache"}
+      );
+      if(!res.ok){
+        throw new Error("Something Went Wrong");
+      }
+
+      return res.json();
+}
+const data=getFun();
+
+

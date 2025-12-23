@@ -3,7 +3,8 @@ import ProductCard from "@/components/ProductCard";
 import { getProducts } from "@/lib/product";
 
 export default async function ProductsPage() {
-  const products=await getProducts(36)
+  const products=await getProducts(400)
+ 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-6xl mx-auto">
