@@ -8,7 +8,6 @@ export default function HomeProductClient({ products }: { products: any[]; }) {
         product.title.toLowerCase().includes(query.toLowerCase())
     );
 
-
     if (query && filteredProducts.length === 0) {
         return (
             <div className='flex justify-center min-h-90 w-full items-center'>
