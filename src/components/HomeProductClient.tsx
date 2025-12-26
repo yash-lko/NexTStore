@@ -7,7 +7,7 @@ export default function HomeProductClient({ products }: { products: any[]; }) {
     const filteredProducts = products.filter((product) =>
         product.title.toLowerCase().includes(query.toLowerCase())
     );
-
+ console.log("Test")
     if (query && filteredProducts.length === 0) {
         return (
             <div className='flex justify-center min-h-90 w-full items-center'>
