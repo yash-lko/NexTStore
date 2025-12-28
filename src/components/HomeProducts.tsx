@@ -1,9 +1,10 @@
 
 import { getProducts } from "@/lib/product";
 import HomeProductClient from "./HomeProductClient";
+import SearchReset from "./SearchReset";
 
 export default async function HomeProducts() {
-   let products = [];
+  let products = [];
 
   try {
     products = await getProducts(12);
@@ -23,5 +24,14 @@ export default async function HomeProducts() {
     );
   }
 
-  return <HomeProductClient products={products} />;
+  return (
+    <>
+      <SearchReset />
+      <HomeProductClient products={products} />;
+    </>
+
+  )
+
+
+
 }

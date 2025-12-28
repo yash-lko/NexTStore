@@ -2,6 +2,7 @@
 import { getProducts } from "@/lib/product";
 import { Product } from "@/types/products";
 import ProductClient from "@/components/ProductClient";
+import SearchReset from "@/components/SearchReset";
 
 export default async function ProductsPage() {
   let products: Product[] = []
@@ -28,7 +29,8 @@ export default async function ProductsPage() {
 
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-white p-6">
+      <SearchReset />
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Products</h1>
         <ProductClient products={products} />

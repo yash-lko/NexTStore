@@ -1,6 +1,7 @@
 "use client"
 import { useCart } from "../context/CartContext";
 import Image from "next/image";
+import SearchReset from "@/components/SearchReset";
 const CartPage = () => {
 
   const { cart, removeFromCart, increaseQty, decreaseQty } = useCart();
@@ -29,6 +30,7 @@ const CartPage = () => {
 
   return (
     <>
+    <SearchReset/>
       {
 
         <div className="max-w-6xl mx-auto px-4 py-10 grid lg:grid-cols-3 gap-8">

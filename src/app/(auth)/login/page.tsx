@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
-
+import SearchReset from "@/components/SearchReset";
 export default function LoginPage() {
-  
+
 
   return (
     <div className="h-130 w-full flex items-center justify-center p-8">
+      <SearchReset />
       <div className="bg-white shadow-xl rounded-xl p-8 w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-900">
           Welcome Back 👋
@@ -14,8 +15,7 @@ export default function LoginPage() {
           Login to your account
         </p>
 
-        <form  className="space-y-4">
-          {/* Email */}
+        <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Email
@@ -26,8 +26,6 @@ export default function LoginPage() {
               placeholder="you@example.com"
             />
           </div>
-
-          {/* Password */}
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Password
@@ -38,8 +36,6 @@ export default function LoginPage() {
               placeholder="••••••••"
             />
           </div>
-
-          {/* Button */}
           <button
             type="submit"
             className="w-full bg-pink-500 text-white py-2 rounded-md font-medium transition cursor-pointer"
@@ -47,8 +43,6 @@ export default function LoginPage() {
             Login
           </button>
         </form>
-
-        {/* Register Link */}
         <p className="text-center text-sm text-gray-700 mt-5">
           Don’t have an account?{" "}
           <Link

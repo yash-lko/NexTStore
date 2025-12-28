@@ -1,8 +1,10 @@
 import { Users, Target, Building2, Star } from "lucide-react";
+import SearchReset from "@/components/SearchReset";
 
 export default function AboutPage() {
     return (
         <div className="min-h-screen bg-white text-black px-6 py-16">
+            <SearchReset/>
             <div className="max-w-5xl mx-auto">
                 <h1 className="text-4xl font-bold mb-4">About Us</h1>
                 <p className="text-gray-700 text-lg max-w-2xl">
