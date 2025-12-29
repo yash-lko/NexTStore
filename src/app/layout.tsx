@@ -41,7 +41,14 @@ export default function RootLayout({
           <Header />
           <div className="mt-18"></div>
           {children}
-          <Toaster position="bottom-right" />
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              style: {
+                pointerEvents: "auto",
+              },
+            }}
+          />
         </CartProvider>
         <Footer />
       </body>
