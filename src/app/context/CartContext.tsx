@@ -2,6 +2,7 @@
 import { useState, createContext, useContext } from "react"
 import { CartContextType, CartItem, Product } from "@/types/products"
 import toast from "react-hot-toast"
+import { showAlertToast } from "@/components/ui/AlertToast"
 
 const CartContext = createContext<CartContextType | null>(null)
 
@@ -12,7 +13,12 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const existing = cart.find(item => item.id === product.id)
 
     if (existing) {
-      toast.success("Quantity increased")
+    showAlertToast(
+          "success",
+          "Quantity Updated",
+          "Product quantity has been increased."
+        )
+
       setCart(prev =>
         prev.map(item =>
           item.id === product.id
@@ -21,18 +27,30 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         )
       )
     } else {
-      toast.success("Item added to cart")
+     showAlertToast(
+        "success",
+        "Added to Cart",
+        "Item has been added to your cart."
+      )
       setCart(prev => [...prev, { ...product, quantity: 1 }])
     }
   }
 
   const removeFromCart = (id: number) => {
-    toast.error("Item removed from cart")
+    showAlertToast(
+      "error",
+      "Removed from Cart",
+      "Item has been removed from your cart."
+    )
     setCart(prev => prev.filter(item => item.id !== id))
   }
 
   const increaseQty = (id: number) => {
-    toast("Quantity updated", { icon: "🛒" })
+     showAlertToast(
+      "success",
+      "Quantity Updated",
+      "Item quantity increased."
+    )
     setCart(prev =>
       prev.map(item =>
         item.id === id
@@ -43,7 +61,11 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   const decreaseQty = (id: number) => {
-    toast("Quantity updated", { icon: "🛒" })
+      showAlertToast(
+      "success",
+      "Quantity Updated",
+      "Item quantity decreased."
+    )
     setCart(prev =>
       prev
         .map(item =>
@@ -71,3 +93,4 @@ export const useCart = () => {
   }
   return context
 }
+
