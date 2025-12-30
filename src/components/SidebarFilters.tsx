@@ -20,13 +20,11 @@ export default function FilterBar() {
     { label: "Default", value: "" },
     { label: "Price: Low → High", value: "low-high" },
     { label: "Price: High → Low", value: "high-low" },
-    { label: "Newest First", value: "newest" },
   ];
 
   return (
     <div className="w-full  bg-white shadow px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4 overflow-x-auto">
       
-      {/* Categories */}
       <div className="flex gap-3 flex-wrap md:flex-nowrap">
         {categories.map((cat) => {
           const Icon = cat.icon;
@@ -46,8 +44,6 @@ export default function FilterBar() {
           );
         })}
       </div>
-
-      {/* Sort Dropdown */}
       <div className="ml-auto">
         <select
           value={sort}
