@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="w-full px-8 mt-6">
       <div className="w-full">
-        <SidebarFilters />
+       
       </div>
      
       <div className="w-full px-4 mt-6">
