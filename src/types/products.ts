@@ -1,3 +1,5 @@
+import { SortType } from "@/lib/sortProducts";
+
 export interface Product {
   id: number;
   title: string;
@@ -32,3 +34,12 @@ export interface ProductCardProps {
 export interface ProductDetailsSlug {
   slug: string;
 }
+
+
+export type PropTypeSorting = {
+  sort: SortType;
+  category: string;
+  categories: string[];
+  onSortChange: (sort: SortType) => void;
+  onCategoryChange: (category: string) => void;
+};

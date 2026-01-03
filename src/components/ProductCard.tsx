@@ -4,10 +4,8 @@ import { ProductCardProps } from "@/types/products";
 import Link from "next/link";
 import { useCart } from "@/app/context/CartContext";
 export default function ProductCard({ product }: ProductCardProps) {
-    const { addToCart, cart } = useCart();
+    const { addToCart} = useCart();
     if (!product) return null;
-    const { title } = product;
-    const slug = title.toLowerCase().trim().replace(/\s+/g, "-");
     return (
         <div className="group bg-white mt-2 rounded-xl cursor-pointer shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col overflow-hidden">
 

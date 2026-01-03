@@ -6,14 +6,12 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300 mt-16 pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
 
-        {/* Logo & About */}
         <div>
-          <h2 className="text-2xl font-bold text-white">NexShop</h2>
+          <h2 className="text-2xl font-bold text-white">NextStore</h2>
           <p className="mt-3 text-sm text-gray-400">
             Your modern eCommerce learning project built with Next.js & Tailwind.
           </p>
 
-          {/* Social Icons */}
           <div className="flex items-center gap-4 mt-4">
             <Link href="#" className="hover:text-white">
               <Facebook size={20} />
@@ -30,7 +28,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
@@ -49,7 +46,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Support */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Support</h3>
           <ul className="space-y-2 text-sm">
@@ -67,8 +63,6 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-
-        {/* Newsletter */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Newsletter</h3>
           <p className="text-sm text-gray-400">

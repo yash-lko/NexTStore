@@ -1,14 +1,6 @@
 "use client";
-
 import { SortType } from "@/lib/sortProducts";
-
-type Props = {
-  sort: SortType;
-  category: string;
-  categories: string[];
-  onSortChange: (sort: SortType) => void;
-  onCategoryChange: (category: string) => void;
-};
+import { PropTypeSorting } from "@/types/products";
 
 export default function SidebarFilters({
   sort,
@@ -16,11 +8,9 @@ export default function SidebarFilters({
   categories,
   onSortChange,
   onCategoryChange,
-}: Props) {
+}: PropTypeSorting) {
   return (
     <div className="w-full bg-white shadow px-4 py-3 flex flex-col md:flex-row gap-4">
-      
-      {/* Categories */}
       <div className="flex gap-3 flex-wrap">
         {["All", ...categories].map((cat) => (
           <button
@@ -37,8 +27,6 @@ export default function SidebarFilters({
           </button>
         ))}
       </div>
-
-      {/* Sorting */}
       <select
         value={sort}
         onChange={(e) => onSortChange(e.target.value as SortType)}
