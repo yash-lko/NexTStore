@@ -7,7 +7,7 @@ export default async function HomeProducts() {
   let products = [];
 
   try {
-    products = await getProducts(12);
+    products = await getProducts(48);
   } catch (error) {
     console.error("Failed to fetch products", error);
     return (
