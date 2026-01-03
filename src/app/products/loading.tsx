@@ -1,4 +1,4 @@
-import ProductSkeleton from "@/components/ProductSkelton";
+import ProductSkeleton from "@/components/skelton/ProductSkelton";
 
 export default function Loading() {
   return (

@@ -1,7 +1,7 @@
 
 import { getProducts } from "@/lib/product";
 import HomeProductClient from "./HomeProductClient";
-import SearchReset from "./SearchReset";
+import SearchReset from "../SearchReset";
 
 export default async function HomeProducts() {
   let products = [];

@@ -1,11 +1,11 @@
 "use client";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "../ProductCard";
 import Image from "next/image";
 import { useSearchStore } from "@/app/store/useSearchStore";
 import { useState, useMemo } from "react";
 import { sortProducts, SortType } from "@/lib/sortProducts";
-import SidebarFilters from "./SidebarFilters";
+import SidebarFilters from "../SidebarFilters";
 import { Product } from "@/types/products";
 
 export default function HomeProductClient({

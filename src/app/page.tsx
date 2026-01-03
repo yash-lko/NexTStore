@@ -1,8 +1,8 @@
 
 import BannerSlider from "@/components/BannerSlider";
-import HomeProducts from "@/components/HomeProducts";
+import HomeProducts from "@/components/homepage/HomeProducts";
 import { Suspense } from "react";
-import HomeProductsSkeleton from "@/components/HomeProductSkelton";
+import HomeProductsSkeleton from "@/components/skelton/HomeProductSkelton";
 export default function Home() {
   return (
     <div className="w-full px-8 mt-6">
