@@ -26,7 +26,7 @@ export default function SidebarFilters({
           <button
             key={cat}
             onClick={() => onCategoryChange(cat)}
-            className={`px-4 py-2 rounded text-sm font-medium
+            className={`px-4 py-2 cursor-pointer rounded text-sm font-medium
               ${
                 category === cat
                   ? "bg-pink-500 text-white"
@@ -42,7 +42,7 @@ export default function SidebarFilters({
       <select
         value={sort}
         onChange={(e) => onSortChange(e.target.value as SortType)}
-        className="border rounded-md px-3 py-2 text-sm bg-white text-black md:ml-auto"
+        className="border border-black cursor-pointer rounded-md px-3 py-2 text-sm bg-white text-black md:ml-auto"
       >
         <option value="default">Default</option>
         <option value="lowToHigh">Price: Low → High</option>

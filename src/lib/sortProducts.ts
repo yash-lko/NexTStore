@@ -8,7 +8,7 @@ export const sortProducts = (
   products: Product[] | undefined,
   sort: SortType
 ): Product[] => {
-  if (!products || !Array.isArray(products)) return []; // <-- prevent runtime error
+  if (!products || !Array.isArray(products)) return [];
 
   const sorted = [...products];
 
@@ -20,6 +20,7 @@ export const sortProducts = (
       return sorted.sort((a, b) => b.price - a.price);
 
     default:
-      return products;
+      return sorted; // ✅ safe
   }
 };
+

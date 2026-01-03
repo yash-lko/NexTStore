@@ -7,7 +7,7 @@ export default async function HomeProducts() {
   let products = [];
 
   try {
-    products = await getProducts(48);
+    products = await getProducts(48)
   } catch (error) {
     console.error("Failed to fetch products", error);
     return (
@@ -27,7 +27,7 @@ export default async function HomeProducts() {
   return (
     <>
       <SearchReset />
-      <HomeProductClient products={products} />;
+      <HomeProductClient products={products} />
     </>
 
   )

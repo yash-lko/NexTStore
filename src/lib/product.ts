@@ -30,6 +30,6 @@ export async function getFun(){
 
       return res.json();
 }
-const data=getFun();
+
 
 
