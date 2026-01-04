@@ -3,7 +3,7 @@
 import ProductCard from "../ProductCard";
 import Image from "next/image";
 import { useSearchStore } from "@/app/store/useSearchStore";
-import { Product } from "@/types/products";
+import { ProductType } from "@/types/products";
 import Filter from "../Filter";
 import Sorting from "../Sorting";
 import { useCategoryFilter } from "@/app/hooks/useCategoryFilter";
@@ -13,7 +13,7 @@ import { useProductSearch } from "@/app/hooks/useSearch";
 export default function HomeProductClient({
   products,
 }: {
-  products: Product[];
+  products: ProductType[];
 }) {
   const { query } = useSearchStore();
 

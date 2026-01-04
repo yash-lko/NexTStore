@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import { Product } from "@/types/products";
+import { ProductType } from "@/types/products";
 
 export const useProductSearch = (
-  products: Product[],
+  products: ProductType[],
   query: string
 ) => {
   return useMemo(() => {

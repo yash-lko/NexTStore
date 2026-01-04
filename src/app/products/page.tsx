@@ -1,10 +1,10 @@
 import { getProducts } from "@/lib/product";
-import { Product } from "@/types/products";
+import { ProductType } from "@/types/products";
 import ProductClient from "@/components/ProductClient";
 import SearchReset from "@/components/SearchReset";
 
 export default async function ProductsPage() {
-  let products: Product[] = [];
+  let products: ProductType[] = [];
 
   try {
     products = await getProducts(24); // <-- raw array

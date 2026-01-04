@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import { Product } from "@/types/products";
+import { ProductType } from "@/types/products";
 
-export const useCategoryFilter = (products: Product[]) => {
+export const useCategoryFilter = (products: ProductType[]) => {
   const [category, setCategory] = useState("All");
 
   const categories = useMemo(() => {

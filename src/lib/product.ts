@@ -1,11 +1,11 @@
-import { Product } from "@/types/products";
+import { ProductType } from "@/types/products";
 
 const API_URL = "https://api.escuelajs.co/api/v1/products";
 
 export async function getProducts(
   limit: number,
   offset: number = 0
-): Promise<Product[]> {
+): Promise<ProductType[]> {
   const res = await fetch(
     `${API_URL}?limit=${limit}&offset=${offset}`,
     { cache: "no-store" }
