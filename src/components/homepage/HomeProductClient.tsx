@@ -3,10 +3,12 @@
 import ProductCard from "../ProductCard";
 import Image from "next/image";
 import { useSearchStore } from "@/app/store/useSearchStore";
-import { useState, useMemo } from "react";
-import { sortProducts, SortType } from "@/lib/sortProducts";
-import SidebarFilters from "../SidebarFilters";
 import { Product } from "@/types/products";
+import Filter from "../Filter";
+import Sorting from "../Sorting";
+import { useCategoryFilter } from "@/app/hooks/useCategoryFilter";
+import { useProductSorting } from "@/app/hooks/useSorting";
+import { useProductSearch } from "@/app/hooks/useSearch";
 
 export default function HomeProductClient({
   products,
@@ -14,36 +16,27 @@ export default function HomeProductClient({
   products: Product[];
 }) {
   const { query } = useSearchStore();
-  const [sort, setSort] = useState<SortType>("default");
-  const [category, setCategory] = useState("All");
 
-  const availableCategories = useMemo(() => {
-    const set = new Set<string>();
-    products.forEach((p) => {
-      if (p.category?.name) {
-        set.add(p.category.name);
-      }
-    });
-    return Array.from(set);
-  }, [products]);
+  // Category
+  const {
+    category,
+    setCategory,
+    categories,
+    categoryFilteredProducts,
+  } = useCategoryFilter(products);
 
-  const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
-      const matchesSearch = product.title
-        .toLowerCase()
-        .includes(query.toLowerCase());
+ 
+  const searchedProducts = useProductSearch(
+    categoryFilteredProducts,
+    query
+  );
 
-      const matchesCategory =
-        category === "All" ||
-        product.category?.name === category;
-
-      return matchesSearch && matchesCategory;
-    });
-  }, [products, query, category]);
-
-  const sortedProducts = useMemo(() => {
-    return sortProducts(filteredProducts, sort);
-  }, [filteredProducts, sort]);
+ 
+  const {
+    sort,
+    setSort,
+    sortedProducts,
+  } = useProductSorting(searchedProducts);
 
   if (query && sortedProducts.length === 0) {
     return (
@@ -60,13 +53,18 @@ export default function HomeProductClient({
 
   return (
     <>
-      <SidebarFilters
-        sort={sort}
-        category={category}
-        categories={availableCategories}
-        onSortChange={setSort}
-        onCategoryChange={setCategory}
-      />
+      <div className="w-full bg-white shadow px-4 py-3 flex flex-col md:flex-row gap-4 justify-between">
+        <Filter
+          category={category}
+          categories={categories}
+          onCategoryChange={setCategory}
+        />
+
+        <Sorting
+          sort={sort}
+          onSortChange={setSort}
+        />
+      </div>
 
       <div className="grid grid-cols-2 mt-6 sm:grid-cols-3 lg:grid-cols-4 gap-7">
         {sortedProducts.map((product) => (

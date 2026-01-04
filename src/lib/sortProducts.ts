@@ -1,8 +1,4 @@
-import { Product } from "@/types/products";
-
-
-export type SortType="default" | "lowToHigh" | "highToLow"
-
+import { Product, SortType } from "@/types/products";
 
 export const sortProducts = (
   products: Product[] | undefined,
