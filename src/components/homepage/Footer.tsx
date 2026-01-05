@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <h2 className="text-2xl font-bold text-white">NextStore</h2>
           <p className="mt-3 text-sm text-gray-400">
-            Your modern eCommerce learning project built with Next.js & Tailwind.
+            An eCommerce learning project built with Next.js & Tailwind.
           </p>
 
           <div className="flex items-center gap-4 mt-4">
@@ -86,7 +86,7 @@ export default function Footer() {
       <hr className="border-gray-700 my-6" />
 
       <p className="text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} NexTShop. All rights reserved.
+        © {new Date().getFullYear()} NextStore. All rights reserved.
       </p>
     </footer>
   );

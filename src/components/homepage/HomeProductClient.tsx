@@ -16,8 +16,6 @@ export default function HomeProductClient({
   products: ProductType[];
 }) {
   const { query } = useSearchStore();
-
-  // Category
   const {
     category,
     setCategory,
