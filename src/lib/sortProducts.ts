@@ -16,7 +16,7 @@ export const sortProducts = (
       return sorted.sort((a, b) => b.price - a.price);
 
     default:
-      return sorted; // ✅ safe
+      return sorted; 
   }
 };
 

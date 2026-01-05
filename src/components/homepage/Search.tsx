@@ -1,8 +1,21 @@
 "use client"
 import { Search } from 'lucide-react'
 import { useSearchStore } from '@/app/store/useSearchStore';
+import { useDebounce } from '@/app/hooks/useDebounce';
+import { useState, useEffect } from 'react';
 const SearchComp = () => {
     const { query, setQuery } = useSearchStore();
+    const [inputValue, setInputValue] = useState(query);
+
+    const debounceValue = useDebounce(inputValue, 300);
+
+    useEffect(() => {
+        setQuery(debounceValue);
+    }, [debounceValue, setQuery]);
+
+    console.log(inputValue, "Input value")
+
+
     return (
         <div className="hidden md:flex items-center flex-1 max-w-xl">
             <div className="w-full relative">
