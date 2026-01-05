@@ -40,7 +40,10 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           <div className="mt-18"></div>
-          {children}
+          <div className="px-15">
+             {children}
+          </div>
+         
           <Toaster
             position="bottom-right"
             toastOptions={{
