@@ -60,10 +60,6 @@ export default async function ProductDetailsUI({ params }: { params: Promise<Pro
 
           <div className="flex gap-3 mt-6">
            <CartButton product={productDetails}/>
-
-            {/* <button className="px-4 py-2 cursor-pointer text-sm rounded-lg border border-gray-300 hover:bg-gray-100 transition">
-              Buy Now
-            </button> */}
           </div>
         </div>
       </div>

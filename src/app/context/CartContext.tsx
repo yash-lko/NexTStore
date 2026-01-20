@@ -1,7 +1,6 @@
 "use client"
 import { useState, createContext, useContext } from "react"
 import { CartContextType, CartItem, Product } from "@/types/products"
-import toast from "react-hot-toast"
 import { showAlertToast } from "@/components/ui/AlertToast"
 
 const CartContext = createContext<CartContextType | null>(null)

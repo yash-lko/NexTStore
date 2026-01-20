@@ -7,7 +7,7 @@ export default async function ProductsPage() {
   let products: ProductType[] = [];
 
   try {
-    products = await getProducts(24); // <-- raw array
+    products = await getProducts(24); 
   } catch (error) {
     return (
       <div className="text-center py-10 text-red-500 min-h-100">
