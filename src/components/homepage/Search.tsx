@@ -13,7 +13,6 @@ const SearchComp = () => {
         setQuery(debounceValue);
     }, [debounceValue, setQuery]);
 
-    console.log(inputValue, "Input value")
 
 
     return (
