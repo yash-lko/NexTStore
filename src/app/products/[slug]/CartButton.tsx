@@ -2,9 +2,9 @@
 
 import { ShoppingCart } from "lucide-react"
 import { useCart } from "@/app/context/CartContext"
-import { Product } from "@/types/products"
+import { ProductType } from "@/types/products"
 
-export default function CartButton({ product }: { product: Product }) {
+export default function CartButton({ product }: { product: ProductType }) {
   const { addToCart } = useCart()
 
   return (

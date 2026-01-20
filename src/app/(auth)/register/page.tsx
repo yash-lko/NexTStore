@@ -1,23 +1,17 @@
 "use client";
-
 import Link from "next/link";
-import { useState } from "react";
-
 export default function RegisterPage() {
-
-
   return (
     <div className="h-150 w-full flex items-center justify-center p-8">
       <div className="bg-white shadow-xl rounded-xl p-8 w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-900">
-          Create an Account ✨
+          Create an Account
         </h2>
         <p className="text-center text-gray-600 mt-1 mb-6">
           Register to get started
         </p>
 
-        <form  className="space-y-4">
-          {/* Name */}
+        <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Full Name
@@ -29,8 +23,6 @@ export default function RegisterPage() {
               placeholder="John Doe"
             />
           </div>
-
-          {/* Email */}
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Email
@@ -42,8 +34,6 @@ export default function RegisterPage() {
               placeholder="you@example.com"
             />
           </div>
-
-          {/* Password */}
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Password
@@ -55,8 +45,6 @@ export default function RegisterPage() {
               placeholder="••••••••"
             />
           </div>
-
-          {/* Button */}
           <button
             type="submit"
             className="w-full bg-pink-500 text-white py-2 rounded-md font-medium transition cursor-pointer"
@@ -64,8 +52,6 @@ export default function RegisterPage() {
             Register
           </button>
         </form>
-
-        {/* Login Link */}
         <p className="text-center text-sm text-gray-700 mt-5">
           Already have an account?{" "}
           <Link
